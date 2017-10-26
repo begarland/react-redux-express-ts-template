@@ -3,6 +3,7 @@
 .idea/*
 web/src/.sass-cache/*
 web/dist
+.sass-cache/*
 
 # misc
 .DS_Store
