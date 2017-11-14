@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './App'
+import App from './content/App'
 import store from './redux/store/store'
 import history from './redux/store/history'
 import registerServiceWorker from './registerServiceWorker'

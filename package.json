@@ -1,6 +1,6 @@
 {
   "name": "react-redux-express-ts-template",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/begarland/react-redux-express-template"
@@ -8,7 +8,7 @@
   "scripts": {
     "start": "npm run tsc & npm run sass & npm run web & npm run server",
     "tsc": "tsc --watch",
-    "sass": "sass --watch web/src/sass/main.scss:web/public/main.css",
+    "sass": "sass --watch web/src/main.scss:web/public/main.css",
     "server": "supervisor ./server/bin/www",
     "web": "watchify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js -v",
     "build": "browserify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js",

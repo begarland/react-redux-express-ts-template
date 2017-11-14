@@ -26919,7 +26919,7 @@ var _react = require('react');
 
 var React = _interopRequireWildcard(_react);
 
-var _ConnectedSample = require('./content/sample/ConnectedSample');
+var _ConnectedSample = require('./sample/ConnectedSample');
 
 var _ConnectedSample2 = _interopRequireDefault(_ConnectedSample);
 
@@ -26957,7 +26957,7 @@ var App = function (_React$Component) {
 exports.default = App;
 
 
-},{"./content/sample/ConnectedSample":118,"react":99}],118:[function(require,module,exports){
+},{"./sample/ConnectedSample":118,"react":99}],118:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27022,7 +27022,7 @@ var ReactDOM = _interopRequireWildcard(_reactDom);
 
 var _reactRedux = require('react-redux');
 
-var _App = require('./App');
+var _App = require('./content/App');
 
 var _App2 = _interopRequireDefault(_App);
 
@@ -27052,7 +27052,7 @@ ReactDOM.render(React.createElement(_reactRedux.Provider, { store: _store2.defau
 (0, _registerServiceWorker2.default)();
 
 
-},{"./App":117,"./redux/store/history":124,"./redux/store/store":125,"./registerServiceWorker":127,"date-input-polyfill":2,"react":99,"react-dom":50,"react-redux":60,"react-router":93,"react-router-redux":82}],121:[function(require,module,exports){
+},{"./content/App":117,"./redux/store/history":124,"./redux/store/store":125,"./registerServiceWorker":127,"date-input-polyfill":2,"react":99,"react-dom":50,"react-redux":60,"react-router":93,"react-router-redux":82}],121:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {

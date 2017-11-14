@@ -2,7 +2,7 @@ import * as React from 'react'
 
 const logo = './logo.svg'
 
-import ConnectedSample from './content/sample/ConnectedSample'
+import ConnectedSample from './sample/ConnectedSample'
 
 class App extends React.Component<any, any> {
   render() {
