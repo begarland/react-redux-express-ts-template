@@ -35,9 +35,9 @@ import { Container } from 'inversify'
                 config[key] = req.headers[key]
             })
             axios.request(config).then(response => {
-                res.send(response)
+                res.send(response.data)
             }).catch(error => {
-                res.status(400).send(error)
+                res.status(400).send(error.data)
             })
         })
         app.get('*', (req, res) => {

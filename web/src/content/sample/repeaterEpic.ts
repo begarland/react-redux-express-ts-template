@@ -18,7 +18,7 @@ const fetchSampleEpic = (action$, state$) =>
                 rxios.request({
                     url: `/repeater`,
                     headers: {
-                        'url': 'https://jsonplaceholder.typicode.com/posts3',
+                        'url': 'https://jsonplaceholder.typicode.com/posts',
                     },
                 }).mergeMap(response => Observable.of(
                         { type: FETCH_SAMPLE_SUCCESSFUL, sampleData: response } as any,

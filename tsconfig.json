@@ -10,7 +10,8 @@
     "allowJs": true,
     "jsx": "react",
     "moduleResolution": "node",
-    "pretty": true,
+    "pretty": true,   
+    "noErrorTruncation": true,
     "emitDecoratorMetadata": true
   },
 

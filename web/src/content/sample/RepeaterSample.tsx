@@ -1,7 +1,6 @@
 import * as React from 'react'
 import Table from '../common/Table';
 import Icon from '../common/Icon';
-import Label from '../common/Label';
 
 interface RepeaterSampleTypes {
     isSpinning: boolean;
@@ -14,7 +13,7 @@ const RepeaterSample = (props: RepeaterSampleTypes) => {
     return (
         <div className='repeater-sample-container'>
             {props.sampleDataError && 
-                <Label label={'an error has occured!!!'} />
+                <h1>an error has occured!!!</h1>
             }
             {props.sampleData && 
                 <GenericDataDisplay data={props.sampleData} />

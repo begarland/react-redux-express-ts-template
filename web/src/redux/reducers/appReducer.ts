@@ -53,6 +53,7 @@ export default (state: AppStateTypes = appState, action) => {
             return {
                 ...state, 
                 isSearching: true,
+                sampleDataError: false,
                 sampleData: null,
             }
         }
@@ -60,6 +61,7 @@ export default (state: AppStateTypes = appState, action) => {
             return {
                 ...state, 
                 isSearching: false,
+                sampleDataError: false,
                 sampleData: action.sampleData,
             }
         }
@@ -67,8 +69,8 @@ export default (state: AppStateTypes = appState, action) => {
             return {
                 ...state, 
                 isSearching: false,
+                sampleDataError: true,
                 sampleData: null,
-                sampleDataError: true
             }
         }
         default: {

@@ -7,7 +7,7 @@ First, Run the following commands to ensure that all global and local dependenci
 
 `npm install`
 
-Also, **Install Yarn**:  
+Next, **Install Yarn**:  
 * [Windows-installation](https://yarnpkg.com/lang/en/docs/install/#windows-stable) 
 
 * [MacOS-installation](https://yarnpkg.com/lang/en/docs/install/#macOS-stable) 
@@ -15,26 +15,16 @@ Also, **Install Yarn**:
 
 ### Development
 
-To start the server, run `npm start` and navigate to `localhost:8081` in your browser.
+To start the development server with watchers, run `npm run dev` and wait for your bundle to build. The first bundle may take awhile. Navigate to `localhost:8081` in your browser.
 
-A repeater endpoint has been included in the server for CORS requests (example [request from the app](./web/src/content/sample/repeaterEpic.ts) and [React component that implements request](./web/src/content/sample/RepeaterSample.tsx) ) Use the endpoint `/repeater` and provide your configuration settings as headers. Be sure to include your request url! 
+An endpoint has been added in the server for CORS requests (example [request from the app](./web/src/content/sample/repeaterEpic.ts) and [React component that uses request](./web/src/content/sample/RepeaterSample.tsx) ) Use the endpoint `/repeater` and provide your configuration settings as headers. Be sure to include your request url! 
 
 > Other accepted configuration settings can be found [here](https://github.com/axios/axios#request-config).
 
-To run the dev build with watchers, run `npm run build` and wait for your bundle to build. The first bundle may take awhile. 
-
 To test, run `npm test` to start the test watcher. Be sure to name your test file in a `<file-name>.test.<file-extension>` format.
  
+### Production
 
-To use the production version of React and remove the redux-logger middleware, run `npm run prod`.
-
-The command `npm run eb` is included to run a prod build in an ElasticBeanstalk instance.
-
-
-
-
-
-
-
+To run the server with production build (which uses the production version of React and removes the redux-logger middleware), run `npm start`. 
 
 ###### Last updated date: 2018-07-08
