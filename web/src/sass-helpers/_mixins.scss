@@ -17,3 +17,22 @@
   -ms-user-select: none;
   user-select: none;
 }
+
+@mixin button {
+  margin-top: auto;
+  height: 25px;
+  text-align: center;
+  vertical-align: center;
+  color: white;
+  background-color: $purple;
+  border-radius: $border-radius;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 5px;
+  border: white 2px solid;
+  margin: 2.5px;
+
+  &:active{
+    transform: translateY(1px);
+  }
+}

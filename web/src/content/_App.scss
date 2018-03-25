@@ -3,14 +3,9 @@
   box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 80px;
-}
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: $black;
   padding: 20px;
   color: white;
 
@@ -18,11 +13,11 @@
 
 .App-intro {
   font-size: large;
+  font-family: $header-font;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+button {
+  @include button;
 }
 
 body {
@@ -42,5 +37,5 @@ html {
 
   width: 100vw;
   min-height: 100vh;
-
+  background-color: $gray;
 }

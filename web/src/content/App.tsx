@@ -1,23 +1,30 @@
 import * as React from 'react'
 
-const logo = './logo.svg'
-
 import ConnectedSample from './sample/ConnectedSample'
+import { AppStateTypes } from '../redux/store/templates/appState'
 
-class App extends React.Component<any, any> {
-  render() {
+interface AppProps {
+    appState: AppStateTypes;
+    navigateToSample: (Event) => void;
+    navigateToObservable: (Event) => void;
+}
+
+const App = (props: AppProps) => {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>React-Redux-Express-TypeScript-Sass template</h2>
-          <h4>navigate to localhost:3002/sample to view the connected Redux-router component</h4>
+        <div className="App">
+            <div className="App-header">
+                <h2>React-Redux-Express-TypeScript-Sass template</h2>
+                <h4>navigate to localhost:3002/sample to view the connected Redux-router component</h4>
+                {props.appState.showNavigateButton &&
+                    <div className="inline-button-container">
+                        <button onClick={props.navigateToSample}>redux</button>
+                        <button onClick={props.navigateToObservable}>redux-observable</button>
+                    </div>
+                }
+            </div>
+            <ConnectedSample/>
         </div>
-
-          <ConnectedSample />
-      </div>
     )
-  }
 }
 
 export default App

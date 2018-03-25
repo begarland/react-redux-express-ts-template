@@ -1,9 +1,15 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
+import { combineEpics } from 'redux-observable'
 import appState from './appReducer'
+import sampleEpic from '../../content/sample/sampleEpic'
 
-export default combineReducers({
+export const rootReducer =  combineReducers({
     router: routerReducer,
-    appState
+    appState,
 
 })
+
+export const rootEpic = combineEpics (
+    sampleEpic,
+)

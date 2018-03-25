@@ -3,10 +3,12 @@ import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import promise from 'redux-promise-middleware'
 import history from './history'
-import reducer from '../reducers/index'
+import { rootReducer, rootEpic } from '../reducers/index'
 import { routerMiddleware } from 'react-router-redux'
+import { createEpicMiddleware } from 'redux-observable'
 
 const routeMiddleware = routerMiddleware(history)
-const middleware = applyMiddleware(routeMiddleware, promise(), thunk, logger)
+const epicMiddleware = createEpicMiddleware(rootEpic)
+const middleware = applyMiddleware(epicMiddleware, routeMiddleware, promise(), thunk, logger)
 
-export default createStore(reducer, middleware)
+export default createStore(rootReducer, middleware)

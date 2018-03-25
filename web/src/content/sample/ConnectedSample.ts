@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import Sample from './Sample'
+import { slideBox } from '../../redux/actions/index'
 
 const mapStateToProps = (state, ownProps) =>  {
     return {
@@ -13,6 +14,9 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     return {
         goBackToApp: () => {
             dispatch(push('/'))
+        },
+        triggerObservable: () => {
+            dispatch(slideBox())
         }
     }
 }
