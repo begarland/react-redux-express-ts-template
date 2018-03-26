@@ -8,7 +8,7 @@ export default (state: AppStateTypes = appState, action) => {
         case LOCATION_CHANGE: {
             return {
                 ...state,
-                showNavigateButton: action.payload.pathname === '/'
+                showNavigateButton: action.payload.pathname === '/',
             }
         }
         case SLIDE_BOX: {

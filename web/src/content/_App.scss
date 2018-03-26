@@ -13,6 +13,20 @@
 
 .App-intro {
   font-size: large;
+}
+
+.header-logo {
+  width: 100px;
+  -webkit-animation: rotate-horizontal-center 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+  animation: rotate-horizontal-center 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both;
+
+  &:hover{
+    -webkit-animation: rotate-horizontal-center 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+    animation: rotate-horizontal-center 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) both infinite;
+  }
+}
+
+.header-text{
   font-family: $header-font;
 }
 
@@ -20,22 +34,24 @@ button {
   @include button;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+
+@-webkit-keyframes rotate-horizontal-center {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+  }
 }
-
-
-html {
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-#root{
-
-  width: 100vw;
-  min-height: 100vh;
-  background-color: $gray;
+@keyframes rotate-horizontal-center {
+  0% {
+    -webkit-transform: rotateX(0);
+    transform: rotateX(0);
+  }
+  100% {
+    -webkit-transform: rotateX(-360deg);
+    transform: rotateX(-360deg);
+  }
 }

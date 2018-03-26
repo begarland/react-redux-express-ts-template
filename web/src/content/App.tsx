@@ -1,28 +1,32 @@
 import * as React from 'react'
 
-import ConnectedSample from './sample/ConnectedSample'
+import Routes from './sample/Routes'
 import { AppStateTypes } from '../redux/store/templates/appState'
 
-interface AppProps {
+const reactLogo = './assets/images/ReactLogo.png'
+
+interface AppTypes {
     appState: AppStateTypes;
-    navigateToSample: (Event) => void;
-    navigateToObservable: (Event) => void;
+    navigateToRedux: (MouseEvent) => void;
+    navigateToObservable: (MouseEvent) => void;
+    goBackToApp: (MouseEvent) => void;
+    triggerObservable: (MouseEvent) => void;
 }
 
-const App = (props: AppProps) => {
+const App = (props: AppTypes) => {
     return (
         <div className="App">
             <div className="App-header">
-                <h2>React-Redux-Express-TypeScript-Sass template</h2>
-                <h4>navigate to localhost:3002/sample to view the connected Redux-router component</h4>
+                <img src={reactLogo} className="header-logo" />
+                <h2 className="header-text">React-Redux-Express-TypeScript-Sass template</h2>
                 {props.appState.showNavigateButton &&
                     <div className="inline-button-container">
-                        <button onClick={props.navigateToSample}>redux</button>
+                        <button onClick={props.navigateToRedux}>redux</button>
                         <button onClick={props.navigateToObservable}>redux-observable</button>
                     </div>
                 }
             </div>
-            <ConnectedSample/>
+            <Routes {...props}/>
         </div>
     )
 }

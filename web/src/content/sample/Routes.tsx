@@ -3,20 +3,19 @@ import { Route, Switch } from 'react-router'
 import { AppStateTypes } from '../../redux/store/templates/appState'
 import ObservableSample from './ObservableSample'
 
-export interface SampleTypes {
+export interface RoutesTypes {
     appState: AppStateTypes;
     goBackToApp: (MouseEvent) => void;
     triggerObservable: (MouseEvent) => void;
-
 }
 
-const Sample = (props: SampleTypes) => {
+const Routes = (props: RoutesTypes) => {
     return (
         <div>
             <Switch>
                 <Route
                     exact={true}
-                    path="/sample"
+                    path="/redux"
                     render={() => {
                         return (
                                 <div>
@@ -44,4 +43,4 @@ const Sample = (props: SampleTypes) => {
     )
 }
 
-export default Sample
+export default Routes

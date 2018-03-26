@@ -1,10 +1,9 @@
 import * as React from 'react'
-import {SampleTypes} from './Sample'
+import { RoutesTypes } from './Routes'
 
-interface ObservableSampleTypes extends SampleTypes {}
+interface ObservableSampleTypes extends RoutesTypes {}
 
 const ObservableSample = (props: ObservableSampleTypes) => {
-    console.log(props)
     return (
         <div id="observable-sample-container">
             <div id="observable-sample-box-slider-container">

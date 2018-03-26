@@ -5,8 +5,7 @@ $portrait-tablet-to-landscape-and-desktop-min-width: 768px;
 $portrait-tablet-to-landscape-and-desktop-max-width: 979px;
 $large-desktop-min-width: 1200px;
 
-
-/*color blind safe color palette - see: https://personal.sron.nl/~pault/*/
+/* color blind safe color palette - see: https://personal.sron.nl/~pault/ */
 $gray: #777777;
 $red: #EE3333;
 $orange: #EE7722;
@@ -20,11 +19,14 @@ $purple: #992288;
 $white: white;
 $black: #222222;
 
-
-/*fonts*/
+/* fonts */
 
 $header-font: 'carbon';
+$bold-font: 'dustimo-bold';
+$regular-font: 'dustimo-regular';
 
-/*other values for consistency across application*/
+/* style guide */
+$button-fill: $purple;
+$text-color: $black;
 
 $border-radius: 4px;

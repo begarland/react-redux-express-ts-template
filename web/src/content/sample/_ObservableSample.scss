@@ -8,6 +8,7 @@
   width: 75%;
   margin: 10px auto;
   background-color: $black;
+  border-radius: $border-radius;
 }
 
 #observable-sample-box{
@@ -15,6 +16,7 @@
   width: 25%;
   background-color: $purple;
   position: absolute;
+  border-radius: $border-radius;
 }
 
 .box-animate{

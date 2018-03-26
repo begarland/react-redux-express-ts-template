@@ -24,7 +24,7 @@
   text-align: center;
   vertical-align: center;
   color: white;
-  background-color: $purple;
+  background-color: $button-fill;
   border-radius: $border-radius;
   font-size: 13px;
   font-weight: bold;
@@ -35,4 +35,11 @@
   &:active{
     transform: translateY(1px);
   }
+}
+
+@mixin input{
+  font-family: $regular-font;
+  border-radius: $border-radius;
+  height: 15px;
+
 }

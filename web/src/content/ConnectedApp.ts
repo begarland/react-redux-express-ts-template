@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import App from './App'
 import {AppStateTypes} from '../redux/store/templates/appState'
+import {slideBox} from '../redux/actions/index'
 
 interface mapStateToPropsTypes {
     appState: AppStateTypes;
@@ -16,12 +17,18 @@ const mapStateToProps = (state: mapStateToPropsTypes, ownProps) =>  {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        navigateToSample: () => {
-            dispatch(push('/sample'))
+        navigateToRedux: () => {
+            dispatch(push('/redux'))
         },
         navigateToObservable: () => {
             dispatch(push('/redux-observable'))
         },
+        goBackToApp: () => {
+            dispatch(push('/'))
+        },
+        triggerObservable: () => {
+            dispatch(slideBox())
+        }
     }
 }
 
