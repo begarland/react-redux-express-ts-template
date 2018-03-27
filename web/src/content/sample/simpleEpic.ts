@@ -1,5 +1,5 @@
 import { ofType } from 'redux-observable'
-import {mapTo, switchMap } from 'rxjs/operators'
+import { switchMap } from 'rxjs/operators'
 import { Observable } from 'rxjs/Rx'
 import { SLIDE_BOX, STOP_BOX } from '../../redux/actions/actionTypes'
 import {LOCATION_CHANGE} from 'react-router-redux'
