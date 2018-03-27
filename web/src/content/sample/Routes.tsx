@@ -20,7 +20,6 @@ const Routes = (props: RoutesTypes) => {
                         return (
                                 <div>
                                     <h1>{props.appState.sample}</h1>
-                                    <button onClick={props.goBackToApp}>Go Back to localhost:3002</button>
                                 </div>
                             )
                     }}

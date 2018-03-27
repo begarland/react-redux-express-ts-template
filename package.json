@@ -5,16 +5,6 @@
     "type": "git",
     "url": "https://github.com/begarland/react-redux-express-template"
   },
-  "scripts": {
-    "start": "npm run tsc & npm run sass & npm run web & npm run server",
-    "tsc": "tsc --watch",
-    "sass": "sass --watch web/src/main.scss:web/public/main.css",
-    "server": "supervisor ./server/bin/www",
-    "web": "watchify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js -v",
-    "build": "browserify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js",
-    "prod": "browserify ./web/dist/index.js -g [ envify --NODE_ENV production ] -g [ uglifyify ] -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] | uglifyjs --compress --mangle > ./web/public/bundle.js",
-    "init": "sh init.sh"
-  },
   "babel": {
     "presets": [
       "es2015",
@@ -40,9 +30,12 @@
     "date-input-polyfill": "^2.14.0",
     "debug": "~2.6.9",
     "envify": "^4.1.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "~4.15.5",
     "express-react-views": "^0.10.4",
     "history": "^4.6.3",
+    "jest": "^22.4.3",
     "jquery": "3.2.1",
     "moment": "2.19.3",
     "morgan": "~1.9.0",
@@ -61,6 +54,9 @@
     "redux-thunk": "^2.2.0",
     "rxjs": "^5.5.7",
     "serve-favicon": "~2.4.5",
+    "sinon": "^4.4.9",
+    "ts-jest": "^22.4.2",
+    "typescript": "^2.7.2",
     "uglifyify": "^4.0.5"
   },
   "devDependencies": {
@@ -70,5 +66,33 @@
     "babel-preset-stage-0": "^6.22.0",
     "babelify": "^7.3.0",
     "browserify-css": "^0.12.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "\\.(ts|tsx)$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testMatch": [
+      "**/__tests__/**/*.ts?(x)",
+      "**/?(*.)(spec|test).tsx?(x)"
+    ],
+    "moduleDirectories": [
+      "node_modules"
+    ]
+  },
+  "scripts": {
+    "start": "npm run tsc & npm run sass & npm run web & npm run server",
+    "tsc": "tsc --watch",
+    "sass": "sass --watch web/src/main.scss:web/public/main.css",
+    "server": "supervisor ./server/bin/www",
+    "web": "watchify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js -v",
+    "build": "browserify -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] web/dist/index.js -o web/public/bundle.js",
+    "prod": "browserify ./web/dist/index.js -g [ envify --NODE_ENV production ] -g [ uglifyify ] -t [ babelify --presets [ es2015 react babel-preset-stage-0 ] --plugins [ babel-plugin-transform-decorators-legacy ] ] | uglifyjs --compress --mangle > ./web/public/bundle.js",
+    "init": "sh init.sh",
+    "test": "jest --color --verbose --expand --watchAll"
   }
 }

@@ -176,7 +176,7 @@ __type-selectors:__
  
  
 __$variables:__
-> `$headline-font`, `$text-color`, `$body-font`
+> `$bold-font`, `$normal-font`, `$text-color`
 
 
 __@mixins:__

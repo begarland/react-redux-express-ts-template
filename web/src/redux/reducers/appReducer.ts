@@ -1,7 +1,7 @@
 import {appState, AppStateTypes} from '../store/templates/appState'
 
 import { LOCATION_CHANGE } from 'react-router-redux'
-import {SLIDE_BOX, STOP_BOX} from '../actions/actionTypes'
+import {SLIDE_BOX, SPIN_LOGO_CHANGE, STOP_BOX} from '../actions/actionTypes'
 
 export default (state: AppStateTypes = appState, action) => {
     switch (action.type) {
@@ -9,6 +9,7 @@ export default (state: AppStateTypes = appState, action) => {
             return {
                 ...state,
                 showNavigateButton: action.payload.pathname === '/',
+                moveBox: false,
             }
         }
         case SLIDE_BOX: {
@@ -23,6 +24,13 @@ export default (state: AppStateTypes = appState, action) => {
                 moveBox: false,
             }
         }
+        case SPIN_LOGO_CHANGE: {
+            return {
+                ...state,
+                spinLogo: action.spinChange
+            }
+        }
+
         default: {
             return state
         }

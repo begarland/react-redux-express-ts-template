@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import App from './App'
 import {AppStateTypes} from '../redux/store/templates/appState'
-import {slideBox} from '../redux/actions/index'
+import {slideBox, spinLogoChange} from '../redux/actions/index'
 
 interface mapStateToPropsTypes {
     appState: AppStateTypes;
@@ -28,7 +28,10 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         },
         triggerObservable: () => {
             dispatch(slideBox())
-        }
+        },
+        logoClick: () => {
+            dispatch(spinLogoChange())
+        },
     }
 }
 
