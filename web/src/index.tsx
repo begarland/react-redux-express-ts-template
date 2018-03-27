@@ -1,7 +1,7 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import App from './content/App'
+import ConnectedApp from './content/ConnectedApp'
 import store from './redux/store/store'
 import history from './redux/store/history'
 import registerServiceWorker from './registerServiceWorker'
@@ -12,7 +12,7 @@ import 'date-input-polyfill'
 ReactDOM.render(
     <Provider store={store}>
                 <ConnectedRouter history={history}>
-                    <Route path="/" component={App}/>
+                    <Route path="/" component={ConnectedApp}/>
                 </ConnectedRouter>
             </Provider>,
 

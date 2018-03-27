@@ -3,14 +3,9 @@
   box-sizing: border-box;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 5s linear;
-  height: 80px;
-}
 
 .App-header {
-  background-color: #222;
-  height: 150px;
+  background-color: $black;
   padding: 20px;
   color: white;
 
@@ -20,27 +15,43 @@
   font-size: large;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.header-logo {
+  width: 100px;
+  cursor: pointer;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
+.spin-logo{
+  -webkit-animation: rotate-vertical-center 2s cubic-bezier(0.860, 0.000, 0.070, 1.000) both infinite;
+  animation: rotate-vertical-center 2s cubic-bezier(0.860, 0.000, 0.070, 1.000) both infinite;
 }
 
 
-html {
-  width: 100vw;
-  overflow-x: hidden;
-  overflow-y: hidden;
+.header-text{
+  font-family: $header-font;
 }
 
-#root{
+button {
+  @include button;
+}
 
-  width: 100vw;
-  min-height: 100vh;
 
+@-webkit-keyframes rotate-vertical-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
+}
+@keyframes rotate-vertical-center {
+  0% {
+    -webkit-transform: rotateY(0);
+    transform: rotateY(0);
+  }
+  100% {
+    -webkit-transform: rotateY(360deg);
+    transform: rotateY(360deg);
+  }
 }
