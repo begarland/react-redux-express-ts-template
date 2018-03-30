@@ -2,16 +2,20 @@ import { connect } from 'react-redux'
 import { withRouter } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import App from './App'
-import {AppStateTypes} from '../redux/store/templates/appState'
-import {slideBox, spinLogoChange} from '../redux/actions/index'
+import { AppStateTypes } from '../redux/store/templates/appState'
+import { FormStateTypes } from '../redux/store/templates/formState'
+import { slideBox, spinLogoChange } from '../redux/actions/index'
 
 interface mapStateToPropsTypes {
     appState: AppStateTypes;
+    formState: FormStateTypes;
+
 }
 
 const mapStateToProps = (state: mapStateToPropsTypes, ownProps) =>  {
     return {
-        appState: state.appState
+        appState: state.appState,
+        formState: state.formState,
     }
 }
 

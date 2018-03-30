@@ -1,14 +1,13 @@
 /* helpers */
 
-@import 'sass-helpers/fonts';
-@import 'sass-helpers/variables';
-@import 'sass-helpers/mixins';
+@import 'sass-helpers/_fonts';
+@import 'sass-helpers/_variables';
+@import 'sass-helpers/_mixins';
 
-@import 'content/App';
-@import 'content/sample/ObservableSample';
+@import 'content/_App';
+@import 'content/sample/_ObservableSample';
 
-@import 'content/reusableComponents/CustomArrayDisplay/CustomArrayDisplay';
-
+@import 'content/reusableComponents/LabelArrayDisplay/_LabelArrayDisplay';
 
 
 body {

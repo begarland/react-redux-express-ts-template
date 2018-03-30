@@ -21,12 +21,15 @@ $black: #222222;
 
 /* fonts */
 
-$header-font: 'carbon';
-$bold-font: 'dustimo-bold';
-$regular-font: 'dustimo-regular';
+$header-font: 'carbon', sans-serif;
+$bold-font: 'alef-bold', sans-serif;
+$regular-font: 'alef-regular', sans-serif;
+
+$label-font-size: 16px;
 
 /* style guide */
 $button-fill: $blue;
 $text-color: $black;
 
+$label-margin: 5px;
 $border-radius: 4px;

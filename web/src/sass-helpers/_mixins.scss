@@ -41,5 +41,16 @@
   font-family: $regular-font;
   border-radius: $border-radius;
   height: 15px;
+}
 
+@mixin bold-label {
+  font-family: $bold-font;
+  color: $black;
+  font-size: $label-font-size;
+}
+
+@mixin regular-label {
+  font-family: $regular-font;
+  color: $black;
+  font-size: $label-font-size;
 }

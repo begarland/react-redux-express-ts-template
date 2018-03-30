@@ -1,0 +1,41 @@
+.label-container {
+  width: 500px;
+  margin: auto;
+  display: inline-block;
+  background-color: $white;
+
+  &:first-child{
+    border-top-left-radius: $border-radius;
+    border-top-right-radius: $border-radius;
+  }
+
+  &:last-child{
+    border-bottom-left-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+  }
+
+}
+
+.bold-label{
+  @include bold-label;
+  text-align: right;
+  width: 150px;
+  display: inline-block;
+  margin: 0;
+  margin-right: $label-margin;
+
+}
+
+.regular-label{
+  @include regular-label;
+  text-align: left;
+  width: 300px;
+  display: inline-block;
+  margin: 0;
+  margin-left: $label-margin;
+}
+
+#label-array-display {
+  margin: auto;
+
+}
