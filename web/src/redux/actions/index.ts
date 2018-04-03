@@ -1,6 +1,7 @@
 import {
     SLIDE_BOX,
     SPIN_LOGO_CHANGE,
+    CHANGE_INPUT_VALUE
 } from './actionTypes'
 
 export const slideBox = () => {
@@ -12,4 +13,8 @@ export const spinLogoChange = () => {
         const spinChange = !(getState().appState.spinLogo)
         dispatch({type: SPIN_LOGO_CHANGE, spinChange})
     }
+}
+
+export const changeInputValue = (key, value) => {
+    return ({type: CHANGE_INPUT_VALUE, key, value})
 }

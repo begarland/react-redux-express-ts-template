@@ -3,6 +3,13 @@ export const appState: AppStateTypes = {
     sample: 'this is a sample from the reducer.',
     moveBox: false,
     spinLogo: true,
+    inputs: {
+        name: '',
+        age: null,
+        favoriteColor: '',
+
+
+    },
 }
 
 export interface AppStateTypes {
@@ -10,5 +17,12 @@ export interface AppStateTypes {
     sample: string;
     moveBox: boolean;
     spinLogo: boolean;
+    inputs: InputTypes;
 
+}
+
+export interface InputTypes {
+    name: string;
+    age: number;
+    favoriteColor: string;
 }

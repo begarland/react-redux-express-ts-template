@@ -1,7 +1,7 @@
 import {appState, AppStateTypes} from '../store/templates/appState'
 
 import { LOCATION_CHANGE } from 'react-router-redux'
-import {SLIDE_BOX, SPIN_LOGO_CHANGE, STOP_BOX} from '../actions/actionTypes'
+import {CHANGE_INPUT_VALUE, SLIDE_BOX, SPIN_LOGO_CHANGE, STOP_BOX} from '../actions/actionTypes'
 
 export default (state: AppStateTypes = appState, action) => {
     switch (action.type) {
@@ -30,7 +30,15 @@ export default (state: AppStateTypes = appState, action) => {
                 spinLogo: action.spinChange
             }
         }
-
+        case CHANGE_INPUT_VALUE: {
+            return {
+                ...state,
+                inputs: {
+                    ...state.inputs,
+                    [action.key]: action.value
+                }
+            }
+        }
         default: {
             return state
         }
