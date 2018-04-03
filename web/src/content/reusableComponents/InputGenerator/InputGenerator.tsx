@@ -1,5 +1,7 @@
 import * as React from 'react'
 import LabelComponent from '../LabelComponent/LabelComponent'
+import Select from './Inputs/Select'
+import Input from './Inputs/Input'
 
 export interface SingleInputTypes {
     id: string;
@@ -24,34 +26,11 @@ const InputGenerator = (props: InputGeneratorTypes) => {
             {props.inputArray.map((input: SingleInputTypes, index: number)=> {
                 if (input.inputType === 'select'){
                     return (
-                        <div className="inline-select-container" key={index}>
-                            {input.label && <LabelComponent label={input.label} additionalClasses={input.additionalLabelClasses}/>}
-                            <select id={input.id} value={input.data} key={index} onChange={(event) => {input.onInputChange(input.id, event.target.value)}}>
-                                {input.selectOptions.map((option: string, index: number) => {
-                                   return(
-                                        <option
-                                            key={index}
-                                            value={option}
-                                        >
-                                            {option}
-                                        </option>
-                                   )
-                                })}
-                            </select>
-                        </div>
+                        <Select {...input} key={index}/>
                     )
                 }
                 return (
-                    <div className="inline-input-container" key={index}>
-                        {input.label && <LabelComponent label={input.label} additionalClasses={input.additionalLabelClasses}/>}
-                        <input
-                            key={index}
-                            id={input.id}
-                            type={(input.inputType ? input.inputType : 'text')}
-                            value={input.data || ''}
-                            onChange={(event) => {input.onInputChange(input.id, event.target.value)}}
-                        />
-                    </div>
+                    <Input {...input} key={index}/>
                 )
             })}
         </div>
