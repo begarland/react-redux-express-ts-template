@@ -1,5 +1,4 @@
 import * as React from 'react'
-import LabelComponent from '../LabelComponent/LabelComponent'
 import Select from './Inputs/Select'
 import Input from './Inputs/Input'
 
@@ -7,15 +6,17 @@ export interface SingleInputTypes {
     id: string;
     label?: string;
     additionalLabelClasses?: string;
-    inputType: string;
+    hideColon?: boolean;
+    inputType?: string;
     additionalInputClasses?: string;
     selectOptions?: string[];
     data: any;
-    onInputChange: (string, Event) => string;
+
 }
 
 export interface InputGeneratorTypes {
     inputArray: SingleInputTypes[];
+    onInputChange: (string, Event) => string;
 }
 
 
@@ -26,11 +27,11 @@ const InputGenerator = (props: InputGeneratorTypes) => {
             {props.inputArray.map((input: SingleInputTypes, index: number)=> {
                 if (input.inputType === 'select'){
                     return (
-                        <Select {...input} key={index}/>
+                        <Select {...input} key={index} onInputChange={props.onInputChange}/>
                     )
                 }
                 return (
-                    <Input {...input} key={index}/>
+                    <Input {...input} key={index} onInputChange={props.onInputChange}/>
                 )
             })}
         </div>

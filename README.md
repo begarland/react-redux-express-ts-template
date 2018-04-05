@@ -8,3 +8,18 @@ To run the dev build with watchers, run `npm start` and navigate to `localhost:3
 
 To test, run `npm test`, which will start the test watcher. Be sure to name your test file in a `<file-name>.test.<file-extension>` format.
 
+
+
+
+##Updates
+
+
+###redux
+
+Integrated with a sample inputs connected to the redux store. 
+
+###redux-observables
+
+Integrated with a sample redux-observable.
+
+

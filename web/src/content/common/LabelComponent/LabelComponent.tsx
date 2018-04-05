@@ -3,11 +3,13 @@ import * as React from 'react'
 interface LabelComponentTypes {
     label: string;
     additionalClasses?: string;
+    hideColon?: boolean;
 }
 
 const LabelComponent = (props: LabelComponentTypes) => {
+    const colon = (props.hideColon ? '' : ':')
     return (
-        <label className={`label ${props.additionalClasses}`}>{props.label}: </label>
+        <label className={`label ${props.additionalClasses ? props.additionalClasses : ''}`}>{props.label}{colon}</label>
     )
 }
 
