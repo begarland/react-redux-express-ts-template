@@ -2,7 +2,9 @@ import * as React from 'react'
 import LabelComponent from '../../LabelComponent/LabelComponent'
 import { SingleInputTypes } from '../InputGenerator'
 
-interface InputTypes extends SingleInputTypes {}
+interface InputTypes extends SingleInputTypes {
+    onInputChange: (string, Event) => string;
+}
 
 const Input = (props: InputTypes) => {
     return (
