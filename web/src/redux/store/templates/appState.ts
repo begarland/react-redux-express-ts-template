@@ -7,6 +7,10 @@ export const appState: AppStateTypes = {
         age: null,
         favoriteColor: '',
     },
+    sampleData: null,
+    sampleDataError: false,
+    isSearching: false,
+
 }
 
 export interface AppStateTypes {
@@ -14,6 +18,9 @@ export interface AppStateTypes {
     moveBox: boolean;
     spinLogo: boolean;
     inputs: InputTypes;
+    sampleData: Object[] | null;
+    sampleDataError: boolean;
+    isSearching: boolean;
 
 }
 

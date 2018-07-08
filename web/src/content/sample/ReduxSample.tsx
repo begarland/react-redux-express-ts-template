@@ -1,5 +1,5 @@
 import * as React from 'react'
-import {RoutesTypes} from './Routes'
+import {RoutesTypes} from '../Routes'
 import InputGenerator, {
     SingleInputTypes,
 } from '../common/InputGenerator/InputGenerator'
