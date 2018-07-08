@@ -8,7 +8,8 @@ import { routerMiddleware } from 'react-router-redux'
 import { createEpicMiddleware } from 'redux-observable'
 
 const routeMiddleware = routerMiddleware(history)
-const epicMiddleware = createEpicMiddleware(rootEpic)
+const epicMiddleware = createEpicMiddleware()
+
 let middleware
 if (process.env.NODE_ENV !== 'production') {
     middleware = applyMiddleware(epicMiddleware, routeMiddleware, promise(), thunk, logger)
@@ -16,5 +17,6 @@ if (process.env.NODE_ENV !== 'production') {
     middleware = applyMiddleware(epicMiddleware, routeMiddleware, promise(), thunk)
 }
 
-
 export default createStore(rootReducer, middleware)
+epicMiddleware.run(rootEpic)
+
