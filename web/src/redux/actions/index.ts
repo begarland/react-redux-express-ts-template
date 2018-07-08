@@ -1,7 +1,8 @@
 import {
     SLIDE_BOX,
     SPIN_LOGO_CHANGE,
-    CHANGE_INPUT_VALUE
+    CHANGE_INPUT_VALUE,
+    FETCH_SAMPLE
 } from './actionTypes'
 
 export const slideBox = () => {
@@ -17,4 +18,8 @@ export const spinLogoChange = () => {
 
 export const changeInputValue = (key, value) => {
     return ({type: CHANGE_INPUT_VALUE, key, value})
+}
+
+export const fetchSampleData = () => {
+    return({type: FETCH_SAMPLE})
 }

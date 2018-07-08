@@ -1,17 +1,17 @@
 import * as React from 'react'
 
-interface LabelComponentTypes {
+interface LabelTypes {
     label: string;
     additionalClasses?: string;
-    hideColon?: boolean;
+    showColon?: boolean;
 }
 
-const LabelComponent = (props: LabelComponentTypes) => {
-    const colon = (props.hideColon ? '' : ':')
+const Label = (props: LabelTypes) => {
+    const colon = (props.showColon ? ':' : '')
     return (
         <label className={`label ${props.additionalClasses ? props.additionalClasses : ''}`}>{props.label}{colon}</label>
     )
 }
 
-export default LabelComponent
+export default Label
 

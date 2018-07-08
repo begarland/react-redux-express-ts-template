@@ -1,25 +1,40 @@
 # react-redux-express-ts-template
 
-Run `init.sh` to ensure local and global dependencies are installed.
+### Initialization 
+First, Run the following commands to ensure that all global and local dependencies are installed ( or run `sh init.sh` on MacOS).
 
-To run the prod build, run `npm run prod` then `npm run server` and navigate to `localhost:3002` in your browser.
+`npm install -g browserify watchify uglify babelify typescript`
 
-To run the dev build with watchers, run `npm start` and navigate to `localhost:3002` in your browser.
+`npm install`
 
-To test, run `npm test`, which will start the test watcher. Be sure to name your test file in a `<file-name>.test.<file-extension>` format.
+Also, **Install Yarn**:  
+* [Windows-installation](https://yarnpkg.com/lang/en/docs/install/#windows-stable) 
 
-
-
-
-##Updates
-
-
-###redux
-
-Integrated with a sample inputs connected to the redux store. 
-
-###redux-observables
-
-Integrated with a sample redux-observable.
+* [MacOS-installation](https://yarnpkg.com/lang/en/docs/install/#macOS-stable) 
 
 
+### Development
+
+To start the server, run `npm start` and navigate to `localhost:8081` in your browser.
+
+A repeater endpoint has been included in the server for CORS requests (example [request from the app](./web/src/content/sample/repeaterEpic.ts) and [React component that implements request](./web/src/content/sample/RepeaterSample.tsx) ) Use the endpoint `/repeater` and provide your configuration settings as headers. Be sure to include your request url! 
+
+> Other accepted configuration settings can be found [here](https://github.com/axios/axios#request-config).
+
+To run the dev build with watchers, run `npm run build` and wait for your bundle to build. The first bundle may take awhile. 
+
+To test, run `npm test` to start the test watcher. Be sure to name your test file in a `<file-name>.test.<file-extension>` format.
+ 
+
+To use the production version of React and remove the redux-logger middleware, run `npm run prod`.
+
+The command `npm run eb` is included to run a prod build in an ElasticBeanstalk instance.
+
+
+
+
+
+
+
+
+###### Last updated date: 2018-07-08

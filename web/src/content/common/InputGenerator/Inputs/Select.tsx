@@ -1,15 +1,15 @@
 import * as React from 'react'
-import LabelComponent from '../../LabelComponent/LabelComponent'
+import Label from '../../Label'
 import { SingleInputTypes } from '../InputGenerator'
 
 interface SelectTypes extends SingleInputTypes {
-    onInputChange: (string, Event) => string;
+    onInputChange: (key: string, value: string) => (event: MouseEvent) => void;
 }
 
 const Select = (props: SelectTypes) => {
     return (
         <div className="inline-input-container">
-            {props.label && <LabelComponent label={props.label} additionalClasses={props.additionalLabelClasses}/>}
+            {props.label && <Label label={props.label} showColon={true} additionalClasses={props.additionalLabelClasses}/>}
             <select
                 id={props.id}
                 className={`select ${props.additionalInputClasses ? props.additionalInputClasses : ''}`}

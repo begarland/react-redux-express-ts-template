@@ -1,17 +1,20 @@
 import * as React from 'react'
 
-import Routes from './sample/Routes'
+import Routes from './Routes'
 import { AppStateTypes } from '../redux/store/templates/appState'
 
 const reactLogo = './assets/images/reactReduxTS.png'
 
 interface AppTypes {
     appState: AppStateTypes;
-    navigateToRedux: (MouseEvent) => void;
-    navigateToObservable: (MouseEvent) => void;
-    goBackToApp: (MouseEvent) => void;
-    triggerObservable: (MouseEvent) => void;
-    logoClick: (MouseEvent) => void;
+    navigateToRedux: () => void;
+    navigateToObservable: () => void;
+    navigateToRepeaterSample: () => void;
+    getSampleData: () => void; 
+    goBackToApp: () => void;
+    triggerObservable: () => void;
+    inputChange: (key: string, value: string) => (event: MouseEvent) => void;
+    logoClick: () => void;
 }
 
 const App = (props: AppTypes) => {
@@ -28,11 +31,12 @@ const App = (props: AppTypes) => {
                     <div className="inline-button-container">
                         <button onClick={props.navigateToRedux}>redux</button>
                         <button onClick={props.navigateToObservable}>redux-observable</button>
+                        <button onClick={props.navigateToRepeaterSample}>server</button>
                     </div>
                 }
                 {!props.appState.showNavigateButton &&
                     <div className="inline-button-container">
-                        <button onClick={props.goBackToApp}>Go Back to localhost:3002</button>
+                        <button onClick={props.goBackToApp}>Go Back to localhost:8081</button>
                     </div>
                 }
             </div>

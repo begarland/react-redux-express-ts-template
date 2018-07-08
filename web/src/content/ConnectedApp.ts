@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { push } from 'react-router-redux'
 import App from './App'
 import {AppStateTypes} from '../redux/store/templates/appState'
-import {changeInputValue, slideBox, spinLogoChange} from '../redux/actions/index'
+import {changeInputValue, slideBox, spinLogoChange, fetchSampleData} from '../redux/actions/index'
 
 interface mapStateToPropsTypes {
     appState: AppStateTypes;
@@ -23,6 +23,12 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         navigateToObservable: () => {
             dispatch(push('/redux-observable'))
         },
+        navigateToRepeaterSample: () => {
+            dispatch(push('/server'))
+        },
+        getSampleData: () => {
+            dispatch(fetchSampleData())
+        },
         goBackToApp: () => {
             dispatch(push('/'))
         },
@@ -32,7 +38,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         logoClick: () => {
             dispatch(spinLogoChange())
         },
-        inputChange: (key, value) => {
+        inputChange: (key: string , value: string) => {
             dispatch(changeInputValue(key, value))
         }
     }

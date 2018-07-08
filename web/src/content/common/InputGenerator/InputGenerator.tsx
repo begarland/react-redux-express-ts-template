@@ -16,7 +16,7 @@ export interface SingleInputTypes {
 
 export interface InputGeneratorTypes {
     inputArray: SingleInputTypes[];
-    onInputChange: (string, Event) => string;
+    onInputChange: (key: string, value: string) => (event: MouseEvent) => void;
 }
 
 
