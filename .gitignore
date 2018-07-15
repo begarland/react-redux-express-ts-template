@@ -16,7 +16,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 web/public/bundle.js
-web/public/main.css
 web/public/main.css.map
 
 # Elastic Beanstalk Files
