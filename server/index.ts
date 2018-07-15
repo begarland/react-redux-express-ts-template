@@ -1,18 +1,23 @@
 import 'reflect-metadata'
 import * as express from 'express'
 import * as bodyParser from 'body-parser'
-import {logger} from './util/Logger'
-import {InversifyExpressServer} from 'inversify-express-utils'
+import { logger } from './util/Logger'
+import { InversifyExpressServer } from 'inversify-express-utils'
 import axios, { AxiosRequestConfig } from 'axios'
 import path = require('path')
 import { Container } from 'inversify'
+import { getContainer } from './container/inversify.config';
 
 (async () => {
     const container = new Container()
-
     /*  When using InversifyExpressServer without a controller, {forceControllers: false} */
     let server = new InversifyExpressServer(container, null, null, null, null, false) 
     /* See: https://github.com/inversify/inversify-express-utils/pull/97 */
+
+
+    // THIS DOES NOT WORK WITH EB WITHOUT PRESETTING UP SOME POSTGRES INSTANCE 
+    // const container = await getContainer()
+    // let server = new InversifyExpressServer(container)
     
     server.setConfig((app) => {
         // let express support JSON bodies
