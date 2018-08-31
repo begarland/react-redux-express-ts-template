@@ -31,6 +31,8 @@
     "babelify": "^7.3.0",
     "body-parser": "~1.18.2",
     "browserify": "^16.2.2",
+    "concurrently": "^4.0.1",
+    "cross-env": "^5.2.0",
     "date-input-polyfill": "^2.14.0",
     "envify": "^4.1.0",
     "enzyme": "^3.3.0",
@@ -90,16 +92,16 @@
     ]
   },
   "scripts": {
-    "dev": "npm run watch-server & npm run watch-web",
-    "lint": "node_modules/.bin/tslint 'src/**/*.ts' --force -t codeFrame",
+    "dev": "concurrently --raw \"npm run watch-server\"  \"npm run watch-web\"",
+    "lint": "node_modules/.bin/tslint 'src/**/*.ts' --force",
     "prod": "npm run production-sass; npm run production-web",
     "production-sass": "sass --sourcemap=none web/src/main.scss:web/public/main.css",
-    "production-web": "node_modules/.bin/browserify web/src/index.tsx -p tsify -g [ envify --NODE_ENV production ] -g [ uglifyify ] -o web/public/bundle.js -v",
-    "start": "npm run prod; node_modules/.bin/ts-node server/index.ts",
+    "production-web": "npm run prod; node_modules/.bin/browserify web/src/index.tsx -p tsify -g [ envify --NODE_ENV production ] -g [ uglifyify ] -o web/public/bundle.js -v",
+    "start": "node_modules/.bin/ts-node server/index.ts",
     "test": "jest --color --verbose --expand --watchAll",
     "watch-sass": "sass --watch web/src/main.scss:web/public/main.css",
-    "watch-server": "NODE_ENV=development node_modules/.bin/nodemon --exec 'yarn run lint && node_modules/.bin/ts-node server/index.ts'",
+    "watch-server": "cross-env NODE_ENV=development node_modules/.bin/nodemon --exec 'concurrently --raw \"npm run lint\" \"node_modules/.bin/ts-node server/index.ts\"'",
     "watch-typescript": "watchify web/src/index.tsx -p tsify --debug -o web/public/bundle.js -v",
-    "watch-web": "npm run watch-sass & npm run watch-typescript"
+    "watch-web": "concurrently --raw \"npm run watch-sass\" \"npm run watch-typescript\""
   }
 }
