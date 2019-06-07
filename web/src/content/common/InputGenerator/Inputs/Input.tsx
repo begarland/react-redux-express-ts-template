@@ -1,15 +1,17 @@
 import * as React from 'react'
 import Label from '../../Label'
-import { SingleInputTypes } from '../InputGenerator'
+import { ISingleInput } from '../InputGenerator'
 
-interface InputTypes extends SingleInputTypes {
+interface IInput extends ISingleInput {
     onInputChange: (key: string, value: string) => void;
 }
 
-const Input = (props: InputTypes) => {
+const Input = (props: IInput) => {
     return (
-        <div className="inline-input-container">
-            {props.label && <Label label={props.label} showColon={true} additionalClasses={props.additionalLabelClasses}/>}
+        <div className='inline-input-container'>
+            {props.label && 
+                <Label label={props.label} showColon={true} additionalClasses={props.additionalLabelClasses}/>
+            }
             <input
                 id={props.id}
                 className={`input ${props.additionalInputClasses ? props.additionalInputClasses : ''}`}

@@ -1,15 +1,15 @@
 import * as React from 'react'
-import Table from '../common/Table';
-import Icon from '../common/Icon';
+import Table from '../common/Table'
+import Icon from '../common/Icon'
 
-interface RepeaterSampleTypes {
+interface IRepeaterSample {
     isSpinning: boolean;
     sampleDataError: boolean;
     sampleData: Object[];
     getSampleData: () => void;
 }
 
-const RepeaterSample = (props: RepeaterSampleTypes) => {
+const RepeaterSample = (props: IRepeaterSample) => {
     return (
         <div className='repeater-sample-container'>
             {props.sampleDataError && 
@@ -19,8 +19,8 @@ const RepeaterSample = (props: RepeaterSampleTypes) => {
                 <GenericDataDisplay data={props.sampleData} />
             }
             {props.isSpinning &&  
-                <div className="search-results-spinner">
-                    <Icon id="spinner" faIcon="spinner fa-pulse"/>
+                <div className='search-results-spinner'>
+                    <Icon id='spinner' faIcon='spinner fa-pulse'/>
                 </div>
             }
             {!props.isSpinning && 
@@ -30,16 +30,15 @@ const RepeaterSample = (props: RepeaterSampleTypes) => {
     )
 }
 
-
 const GenericDataDisplay = (props: {data: Object[]}) => {
     const columnHeadersKeys = Object.keys(props.data[0])
 
     let columnHeaders = {}
-    for (let i = 0; i < columnHeadersKeys.length; i++){
+    for (let i = 0; i < columnHeadersKeys.length; i++) {
         columnHeaders[columnHeadersKeys[i]] = columnHeadersKeys[i]
     }
 
-    const smallExampleDataSet = props.data.slice(0,4) 
+    const smallExampleDataSet = props.data.slice(0, 4) 
 
     return (
         <div className='generic-data-container'>

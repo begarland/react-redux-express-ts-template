@@ -1,21 +1,25 @@
 import * as React from 'react'
-import {RoutesTypes} from '../Routes'
+import { IRoutes } from '../Routes'
 import InputGenerator, {
-    SingleInputTypes,
+    ISingleInput,
 } from '../common/InputGenerator/InputGenerator'
 
-interface ReduxSampleTypes extends RoutesTypes {
+interface IReduxSample extends IRoutes {
 
 }
-const ReduxSample = (props: ReduxSampleTypes) => {
+const ReduxSample = (props: IReduxSample) => {
     const colorArray = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'black', 'white', 'gray']
-
-
-    //because the action layer will created the input data on dispatch the props will throw errors in TSLint
-    const inputArray: SingleInputTypes[] = [
+    
+    const inputArray: ISingleInput[] = [
         {id: 'name', inputType: 'text', label: 'name', data: props.appState.inputs.name},
         {id: 'age', inputType: 'number', label: 'age', data: props.appState.inputs.age},
-        {id: 'favoriteColor', inputType: 'select', label: 'favoriteColor', data: props.appState.inputs.favoriteColor, selectOptions: colorArray}
+        {
+            id: 'favoriteColor', 
+            inputType: 'select', 
+            label: 'favoriteColor', 
+            data: props.appState.inputs.favoriteColor, 
+            selectOptions: colorArray
+        }
     ]
 
     return (

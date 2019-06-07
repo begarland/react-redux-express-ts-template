@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-export interface TableProps {
+export interface ITable {
     columnHeaders: object;
     tableType?: string;
     customPlaceholder?: string;
@@ -9,7 +9,7 @@ export interface TableProps {
     tableClick?(event: any);
 }
 
-const Table = (props: TableProps) => {
+const Table = (props: ITable) => {
 
     const renderTableHeaderColumns = () => {
         return Object.keys(props.columnHeaders).map((key) => {
@@ -21,7 +21,7 @@ const Table = (props: TableProps) => {
         let noData = (props.data === undefined || props.data.length === 0)
         if (noData) {
             return (
-                <tr className="noDataCell">
+                <tr className='no-data-cell'>
                     {props.customPlaceholder ?
                         <td> {props.customPlaceholder} </td> :
                         <td> No data </td>
@@ -32,7 +32,7 @@ const Table = (props: TableProps) => {
             return props.data.map((datum, index) => {
                 return (
                     <tr
-                        className="table-row"
+                        className='table-row'
                         key={index}
                         data-value={datum[index]}
                     >
@@ -51,8 +51,8 @@ const Table = (props: TableProps) => {
                 return (
                     <td key={rowIndex * keys.length + index}>
                         <a
-                            className="tableRowKey"
-                            href="/#"
+                            className='table-row-key'
+                            href='/#'
                             data-value={datum[key]}
                             onClick={props.tableClick}
                         >
@@ -66,14 +66,14 @@ const Table = (props: TableProps) => {
         })
     }
     return (
-        <div id="table-container">
-            <table id={props.tableType + '_list_table'} className="list_table">
+        <div id='table-container'>
+            <table id={props.tableType + '_list_table'} className='list_table'>
                 <thead>
                 <tr>
                     {renderTableHeaderColumns()}
                 </tr>
                 </thead>
-                <tbody className="list_table_body">
+                <tbody className='list_table_body'>
                 {renderTableRows()}
                 </tbody>
             </table>

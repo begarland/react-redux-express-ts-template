@@ -1,25 +1,25 @@
 import * as React from 'react'
 import { Route, Switch } from 'react-router'
-import { AppStateTypes } from '../redux/store/templates/appState'
+import { IAppState } from '../redux/store/templates/appState'
 import ObservableSample from './sample/ObservableSample'
 import ReduxSample from './sample/ReduxSample'
 import RepeaterSample from './sample/RepeaterSample'
 
-export interface RoutesTypes {
-    appState: AppStateTypes;
+export interface IRoutes {
+    appState: IAppState;
     goBackToApp: () => void;
     getSampleData?: () => void;
     triggerObservable: () => void;
     inputChange?: (key: string, value: string) => (event: MouseEvent) => void;
 }
 
-const Routes = (props: RoutesTypes) => {
+const Routes = (props: IRoutes) => {
     return (
         <div>
             <Switch>
                 <Route
                     exact={true}
-                    path="/redux"
+                    path='/redux'
                     render={() => {
                         return (
                                 <ReduxSample {...props}/>
@@ -28,7 +28,7 @@ const Routes = (props: RoutesTypes) => {
                 />
                 <Route
                     exact={true}
-                    path="/redux-observable"
+                    path='/redux-observable'
                     render={() => {
                         return (
                             <ObservableSample

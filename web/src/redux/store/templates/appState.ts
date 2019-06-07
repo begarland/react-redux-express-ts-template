@@ -1,4 +1,4 @@
-export const appState: AppStateTypes = {
+export const appState: IAppState = {
     showNavigateButton: true,
     moveBox: false,
     spinLogo: true,
@@ -13,18 +13,18 @@ export const appState: AppStateTypes = {
 
 }
 
-export interface AppStateTypes {
+export interface IAppState {
     showNavigateButton: boolean;
     moveBox: boolean;
     spinLogo: boolean;
-    inputs: InputTypes;
+    inputs: IInput;
     sampleData: Object[] | null;
     sampleDataError: boolean;
     isSearching: boolean;
 
 }
 
-export interface InputTypes {
+export interface IInput {
     name: string;
     age: number;
     favoriteColor: string;
