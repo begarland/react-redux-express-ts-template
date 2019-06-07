@@ -11,11 +11,7 @@ Next, install Sass from [here](https://sass-lang.com/install).
 
 ### Development
 
-To start the development server with watchers, run `npm run dev` and wait for your bundle to build. The first bundle may take awhile. Navigate to `localhost:8081` in your browser.
-
-An endpoint has been added in the server for CORS requests (example [request from the app](./web/src/content/sample/repeaterEpic.ts) and [React component that uses request](./web/src/content/sample/RepeaterSample.tsx) ) Use the endpoint `/repeater` and provide your configuration settings as headers. Be sure to include your request url! 
-
-> Other accepted configuration settings can be found [here](https://github.com/axios/axios#request-config).
+To start the development server with watchers, run `npm run dev` and wait for your bundle to build. The first bundle may take awhile. Navigate to `localhost:8080` in your browser to use with hot-reloader.
 
 To test, run `npm test` to start the test watcher. Be sure to name your test file in a `<file-name>.test.<file-extension>` format.
  
@@ -23,4 +19,4 @@ To test, run `npm test` to start the test watcher. Be sure to name your test fil
 
 To run the server with production build (which uses the production version of React and removes the redux-logger middleware), run `npm start`. 
 
-###### Last updated date: 2018-08-31
+###### Last updated date: 2019-06-07
