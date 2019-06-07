@@ -2,7 +2,7 @@ import * as React from 'react'
 import Select from './Inputs/Select'
 import Input from './Inputs/Input'
 
-export interface SingleInputTypes {
+export interface ISingleInput {
     id: string;
     label?: string;
     additionalLabelClasses?: string;
@@ -14,18 +14,16 @@ export interface SingleInputTypes {
 
 }
 
-export interface InputGeneratorTypes {
-    inputArray: SingleInputTypes[];
+export interface IInputGenerator {
+    inputArray: ISingleInput[];
     onInputChange: (key: string, value: string) => (event: MouseEvent) => void;
 }
 
-
-
-const InputGenerator = (props: InputGeneratorTypes) => {
+const InputGenerator = (props: IInputGenerator) => {
     return (
-        <div className="input-container">
-            {props.inputArray.map((input: SingleInputTypes, index: number)=> {
-                if (input.inputType === 'select'){
+        <div className='input-container'>
+            {props.inputArray.map((input: ISingleInput, index: number) => {
+                if (input.inputType === 'select') {
                     return (
                         <Select {...input} key={index} onInputChange={props.onInputChange}/>
                     )

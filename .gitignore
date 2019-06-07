@@ -22,3 +22,5 @@ web/public/main.css.map
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+*.css
+web/public/main.css
