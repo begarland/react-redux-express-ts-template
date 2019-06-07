@@ -1,17 +1,13 @@
 # react-redux-express-ts-template
 
 ### Initialization 
-First, Run the following commands to ensure that all global and local dependencies are installed ( or run `sh init.sh` on MacOS).
+First, run the following commands to ensure that all global and local dependencies are installed (or run `sh init.sh` on MacOS).
 
 `npm install -g browserify watchify uglify babelify typescript`
 
 `npm install`
 
-Next, **Install Yarn**:  
-* [Windows-installation](https://yarnpkg.com/lang/en/docs/install/#windows-stable) 
-
-* [MacOS-installation](https://yarnpkg.com/lang/en/docs/install/#macOS-stable) 
-
+Next, install Sass from [here](https://sass-lang.com/install). 
 
 ### Development
 
@@ -27,4 +23,4 @@ To test, run `npm test` to start the test watcher. Be sure to name your test fil
 
 To run the server with production build (which uses the production version of React and removes the redux-logger middleware), run `npm start`. 
 
-###### Last updated date: 2018-07-08
+###### Last updated date: 2018-08-31
