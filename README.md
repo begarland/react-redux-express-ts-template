@@ -17,6 +17,6 @@ To test, run `npm test` to start the test watcher. Be sure to name your test fil
  
 ### Production
 
-To run the server with production build (which uses the production version of React and removes the redux-logger middleware), run `npm start`. 
+To run the server with production build (which uses the production version of React and removes the redux-dev-tools extension), run `npm start`. 
 
-###### Last updated date: 2019-06-07
+###### Last updated date: 2020-04-09
